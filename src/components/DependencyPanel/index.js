@@ -14,7 +14,7 @@ export default ({ dependencies, loading }) => (
 
               return (
                 <li key={`dependency-${dep.name}`} className={isOk ? "dependency-ok" : hasWarnings ? "dependency-warning" : "dependency-error"}>
-                  {dep.name}
+                  { dep.warnings.length ? "! - " : dep.errors.length ? "X - " : "OK - " }{dep.name}
                   {
                     dep.warnings
                       ? (
