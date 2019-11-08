@@ -1,4 +1,7 @@
-import { recentProjectsLoaded } from "../actionCreators/projects"
+import fs from "fs"
+import yaml from "js-yaml"
+
+import { recentProjectsLoaded, openProject, addRecentProject } from "../actionCreators/projects"
 
 export const fetchRecentProjects = () => dispatch => {
   const raw = localStorage.getItem("RECENT_PROJECTS")
@@ -10,3 +13,19 @@ export const fetchRecentProjects = () => dispatch => {
     dispatch(recentProjectsLoaded([]))
   }
 }
+
+export const loadProject = fileName => dispatch => {
+  const data = fs.readFileSync(fileName, "utf8")
+  const pubspec = yaml.safeLoad(data)
+
+  const project = {
+    fileName,
+    name: pubspec.name,
+    // TODO this is not the best way, we should cover all the possibilities like path and etc
+    flameVersion: JSON.stringify(pubspec.dependencies.flame)
+  }
+
+  dispatch(openProject(project))
+  dispatch(addRecentProject(project))
+}
+

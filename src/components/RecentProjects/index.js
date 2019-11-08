@@ -11,10 +11,13 @@ export default ({
     <h2> {loading ? 'Loading' : ''} Recent projects </h2>
     {
       recentProjects.length ? (
-        <p>
-          Aoooba
-        </p>
-
+        <ul>
+          {
+            recentProjects.map(project => (
+              <li key={project.name}>{ project.name }</li>
+            ))
+          }
+        </ul>
       ) : (
         <p>
           No recent project, open or create a new one using the buttons bellow

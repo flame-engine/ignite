@@ -10,7 +10,7 @@ import { fetchDependencies } from "./actions/dependencies";
 import { fetchRecentProjects } from "./actions/projects";
 
 import DependencyPanel from "./containers/DependencyPanel";
-import RecentProjects from "./containers/RecentProjects";
+import Workspace from "./containers/Workspace";
 
 import "./icons";
 import "./main.css";
@@ -23,7 +23,7 @@ const store = createStore(
 
 const Index = () => (
   <Provider store={store}>
-    <RecentProjects />
+    <Workspace />
     <DependencyPanel />
   </Provider>
 );
