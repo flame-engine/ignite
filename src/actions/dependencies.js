@@ -1,9 +1,10 @@
-const commandExists = window.require("command-exists");
 
 import { setDependency, dependenciesLoaded } from "../actionCreators/dependencies";
 
 import { flutterDoctor } from "../lib/cmds";
 import { parseFlutterDoctor } from "../lib/flutter-doctor-parser";
+
+import commandExists from "command-exists";
 
 const fetchFlutter = () => dispatch =>
   commandExists("flutter")

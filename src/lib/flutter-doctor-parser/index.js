@@ -1,9 +1,4 @@
-// Not happy with this, need to find a better solution to be able to  use this on Electron and jest testings
-if (!window.require) {
-  window.require = require
-}
-
-const os = window.require("os");
+import os from "os";
 
 const parseCategory = (lines, textRef, obj) => {
   let i = lines.findIndex(line => line.indexOf(textRef) !== -1) + 1;

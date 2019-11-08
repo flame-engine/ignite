@@ -1,4 +1,4 @@
-const { spawn } = window.require("child_process");
+import { spawn } from "child_process";
 
 const exec = (cmd, args) => new Promise((resolve, reject) => {
   const c = spawn(cmd, args);
