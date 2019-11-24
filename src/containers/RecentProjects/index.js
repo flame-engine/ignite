@@ -4,7 +4,7 @@ import RecentProjects from "../../components/RecentProjects";
 
 import { loadProject } from "../../actions/projects";
 
-import { openProject } from "../../actionCreators/projects"
+import { openProject, openProjectCreation } from "../../actionCreators/projects"
 
 import { remote } from "electron";
 
@@ -14,6 +14,7 @@ const mapStateToProps = ({ projects: { recentProjects } }) => ({ recentProjects 
 
 const mapDispatchToProps = dispatch => ({
   onClickNew: () => {
+    dispatch(openProjectCreation())
   },
   onOpenProject: project => {
     dispatch(openProject(project))

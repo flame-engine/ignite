@@ -16,3 +16,11 @@ export const openProject = project => ({
 export const closeCurrentProject = () => ({
   type: "CLOSE_CURRENT_PROJECT",
 });
+
+export const openProjectCreation = () => ({
+  type: "OPEN_PROJECT_CREATION",
+})
+
+export const cancelProjectCreation = () => ({
+  type: "CANCEL_PROJECT_CREATION",
+})

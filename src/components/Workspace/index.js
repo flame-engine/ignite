@@ -2,9 +2,11 @@ import React from "react"
 
 import RecentProjects from "../../containers/RecentProjects"
 import ProjectPanel from "../../containers/ProjectPanel"
+import NewGameDialog from "../../containers/NewGameDialog"
 
 export default ({
-  currentProject
+  currentProject,
+  creatingNewProject,
 }) => (
   <div>
     {
@@ -14,5 +16,6 @@ export default ({
         <RecentProjects />
       )
     }
+    { creatingNewProject && <NewGameDialog /> }
   </div>
 )

@@ -7,9 +7,33 @@ body {
   background-color: #000;
 }
 
-.panel {
+.dialog-panel, .panel {
   border: 1px solid #e5e5e5;
   background-color: #222;
   margin: 5px;
   padding: 15px;
+}
+
+.dialog-overlay {
+  position: absolute;
+  background-color: rgba(0,0,0, 0.9);
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.dialog-panel {
+  margin: 100px;
+  position: relative;
+}
+
+a {
+  color: #555;
+}
+
+.close-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }

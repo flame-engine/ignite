@@ -3,7 +3,7 @@ import React from "react"
 import "./index.css";
 export default ({ currentProject, onCloseProject }) => (
   <div className="panel project-panel">
-    <a href="#" onClick={onCloseProject} className="close-project">
+    <a href="#" onClick={onCloseProject} className="close-icon">
       X
     </a>
     <h3>{currentProject.name}</h3>
