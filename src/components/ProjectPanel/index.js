@@ -1,7 +1,11 @@
 import React from "react"
 
-export default ({ currentProject }) => (
-  <div className="panel">
+import "./index.css";
+export default ({ currentProject, onCloseProject }) => (
+  <div className="panel project-panel">
+    <a href="#" onClick={onCloseProject} className="close-project">
+      X
+    </a>
     <h3>{currentProject.name}</h3>
     <p>
       {`Flame version: ${currentProject.flameVersion}`}

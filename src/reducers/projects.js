@@ -15,6 +15,12 @@ export default (state = initialState, action) => {
         ...state,
         recentProjects: [ ...state.recentProjects, action.payload ]
       };
+    case "CLOSE_CURRENT_PROJECT": {
+      return {
+        ...state,
+        currentProject: null
+      }
+    }
   }
   return state;
 }

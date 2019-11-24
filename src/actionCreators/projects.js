@@ -12,3 +12,7 @@ export const openProject = project => ({
   type: "OPEN_PROJECT",
   payload: project
 })
+
+export const closeCurrentProject = () => ({
+  type: "CLOSE_CURRENT_PROJECT",
+});
