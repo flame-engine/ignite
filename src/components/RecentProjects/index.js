@@ -15,8 +15,8 @@ export default ({
         <ul>
           {
             recentProjects.map(project => (
-              <a href="#" onClick={() => onOpenProject(project)}>
-                <li key={project.name}>{ project.name }</li>
+              <a key={project.name} href="#" onClick={() => onOpenProject(project)}>
+                <li>{ project.name }</li>
               </a>
             ))
           }
