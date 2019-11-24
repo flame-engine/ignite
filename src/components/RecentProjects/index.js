@@ -4,6 +4,7 @@ export default ({
   recentProjects,
   loading,
 
+  onOpenProject,
   onClickOpen,
   onClickNew,
 }) => (
@@ -14,7 +15,9 @@ export default ({
         <ul>
           {
             recentProjects.map(project => (
-              <li key={project.name}>{ project.name }</li>
+              <a href="#" onClick={() => onOpenProject(project)}>
+                <li key={project.name}>{ project.name }</li>
+              </a>
             ))
           }
         </ul>

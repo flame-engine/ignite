@@ -5,6 +5,7 @@ import { createStore, applyMiddleware, combineReducers } from "redux";
 import thunk from "redux-thunk";
 
 import reducers from "./reducers";
+import localStorageMiddleware from './middlewares/localStorage'
 
 import { fetchDependencies } from "./actions/dependencies";
 import { fetchRecentProjects } from "./actions/projects";
@@ -18,7 +19,7 @@ import "./theme.css";
 
 const store = createStore(
   combineReducers(reducers),
-  applyMiddleware(thunk),
+  applyMiddleware(thunk, localStorageMiddleware),
 );
 
 const Index = () => (

@@ -4,6 +4,8 @@ import RecentProjects from "../../components/RecentProjects";
 
 import { loadProject } from "../../actions/projects";
 
+import { openProject } from "../../actionCreators/projects"
+
 import { remote } from "electron";
 
 const { dialog } = remote;
@@ -12,6 +14,9 @@ const mapStateToProps = ({ projects: { recentProjects } }) => ({ recentProjects 
 
 const mapDispatchToProps = dispatch => ({
   onClickNew: () => {
+  },
+  onOpenProject: project => {
+    dispatch(openProject(project))
   },
   onClickOpen: () => {
     dialog.showOpenDialog({

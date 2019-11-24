@@ -9,3 +9,7 @@ body, html, .full-size, #app {
   display: flex;
   flex-direction: column;
 }
+
+a {
+  color: #555;
+}
